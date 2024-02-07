@@ -2,8 +2,8 @@ const Mascota = require('../models/mascota');
 const { response } = require('express');
 
 const mascotasPost = async (req, res) => {
-    const {nombreMascota, edadMascota, razaMascota, colorMascota} = req.body;
-    const mascota = new Mascota({nombreMascota, edadMascota, razaMascota, colorMascota});
+    const {animal, nombreMascota, edadMascota, razaMascota, colorMascota} = req.body;
+    const mascota = new Mascota({animal, nombreMascota, edadMascota, razaMascota, colorMascota});
 
     await mascota.save();
 
@@ -14,7 +14,7 @@ const mascotasPost = async (req, res) => {
 
 const mascotasGet = async (req, res = response) => {
     const {limite, desde} = req.query;
-    const query = {estado: true};
+    const query = {estadoMascota: true};
 
     const [total, mascotas] = await Promise.all([
         Mascota.countDocuments(query),
@@ -29,7 +29,41 @@ const mascotasGet = async (req, res = response) => {
     })
 }
 
+const getMascotaById = async (req, res) => {
+    const {id} = req.params;
+    const mascota = await Mascota.findOne({_id: id});
+    
+    res.status(200).json({
+        mascota
+    });
+}
+
+const putMascotas = async (req, res = response) => {
+    const {id} = req.params;
+    const {_id, ...resto} = req.body;
+
+    const mascota = await Mascota.findByIdAndUpdate(id, resto);
+
+    res.status(200).json({
+        msg: "Mascota actualizada exitosamente!!!",
+        mascota
+    });
+}
+
+const deleteMascotas = async (req, res) => {
+    const {id} = req.params;
+    const mascota = await Mascota.findByIdAndUpdate(id, {estadoMascota: false});
+
+    res.status(200).json({
+        msg: 'Mascota eliminada exitosamente',
+        mascota
+    })
+}
+
 module.exports = {
     mascotasPost,
-    mascotasGet
+    mascotasGet,
+    getMascotaById,
+    putMascotas,
+    deleteMascotas
 }

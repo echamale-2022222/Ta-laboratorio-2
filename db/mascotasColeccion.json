@@ -1,0 +1,89 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "mascotasColeccion",
+    "dateExported": "2024-02-07T22:16:59.897Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "cb44ab9f-7c9e-42ad-9187-6b7e664482bf",
+            "colId": "4e619b27-8261-431d-af36-ac35ff538973",
+            "containerId": "",
+            "name": "delete mascotas",
+            "url": "http://localhost:3000/api/mascotas/65c3eaf1a59f6ac8dbaab949",
+            "method": "DELETE",
+            "sortNum": 10000,
+            "created": "2024-02-07T22:15:12.194Z",
+            "modified": "2024-02-07T22:16:37.159Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8862a1c1-2660-4189-9d13-0ddfb70128b0",
+            "colId": "4e619b27-8261-431d-af36-ac35ff538973",
+            "containerId": "",
+            "name": "post mascotas",
+            "url": "http://localhost:3000/api/mascotas",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-07T22:15:12.195Z",
+            "modified": "2024-02-07T22:15:12.195Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"animal\": \"Perro\",\n  \"nombreMascota\": \"Shiloh\",\n  \"edadMascota\": \"5 años\",\n  \"razaMascota\": \"Husky\",\n  \"colorMascota\": \"Negro con blanco\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "33c1fc63-01b9-4ce4-a6fb-9c6e452ced44",
+            "colId": "4e619b27-8261-431d-af36-ac35ff538973",
+            "containerId": "",
+            "name": "put mascotas",
+            "url": "http://localhost:3000/api/mascotas/65c400f80d3de9cb2a236b01",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-02-07T22:15:12.196Z",
+            "modified": "2024-02-07T22:16:14.068Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombreMascota\": \"Solovino\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ca77858d-c8f5-4197-b75b-aa12ef37d6f1",
+            "colId": "4e619b27-8261-431d-af36-ac35ff538973",
+            "containerId": "",
+            "name": "get mascotasById",
+            "url": "http://localhost:3000/api/mascotas/65c400f80d3de9cb2a236b01",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-07T22:15:12.197Z",
+            "modified": "2024-02-07T22:15:58.552Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d04cce00-95ea-4ce0-8053-b1d1e18c35b7",
+            "colId": "4e619b27-8261-431d-af36-ac35ff538973",
+            "containerId": "",
+            "name": "get mascotas",
+            "url": "http://localhost:3000/api/mascotas",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-02-07T22:15:12.198Z",
+            "modified": "2024-02-07T22:15:12.198Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
